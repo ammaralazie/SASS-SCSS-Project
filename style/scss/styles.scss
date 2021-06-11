@@ -1,0 +1,74 @@
+@import 'base';
+@import 'color';
+@import 'mobile';
+
+%alinCenter{
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    @extend %alinCenter;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height:50px ;
+    background-color: $light;
+    &_logo{
+        color: $dark;
+        text-decoration: none;
+        @extend %alinCenter;
+        justify-content: center;
+    }
+    &_bars{
+        opacity: 0;
+        @include tablet{
+            color: rgb(34 33 33);
+            position: absolute;
+            top: 10px;
+            right: 28px;
+            opacity: 1;
+            font-size: 2rem;
+        }
+    }
+    &_menu{
+        @extend %alinCenter;
+        justify-content: center;
+        list-style: none;
+        height: 100%;
+        @include tablet{
+            display: none;
+        }
+        
+        &_links{
+            text-decoration: none;
+            color: $dark;
+            margin-right: 10px;
+            margin-top: 30px;
+            width: 80px;
+            height: 50px;
+            &:hover{
+                color:$lime;
+                transition: all 0.3s ease;
+            }
+        }
+        #button{
+            background: $lime;
+            color: $light;
+            border-radius: 3px;
+           @extend %alinCenter;
+           justify-content: center;
+           margin: 5px;
+           &:hover{
+               background: $orangeRed;
+               transition: all 0.3s ease;
+           }
+
+        }
+    }
+
+
+
+}
