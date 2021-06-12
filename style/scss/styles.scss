@@ -7,6 +7,7 @@
     align-items: center;
 }
 
+/* nav bar */
 .navbar{
     @extend %alinCenter;
     justify-content: space-between;
@@ -68,7 +69,87 @@
 
         }
     }
-
-
-
 }
+/* end of nav bar */
+
+/* hero section */
+.hero{
+  width: 100%;
+  max-height: 400px;
+  background-color: $light;  
+  &_container{
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: 1fr 1fr ;
+      line-height: 2;
+      @include tablet{
+          grid-template-columns: 1fr;
+          line-height: 1.5;
+      }
+      &_left{
+          @extend %alinCenter;
+          justify-content: center;
+          flex-direction: column;
+          & h1{
+              color: $lime;
+              font-weight: 700;
+              font-size: 30px;
+        }
+        & h2{
+            color: $dark;
+            font-size: 25px;
+        }
+        & p{
+            color: $dark;
+        }
+      }
+      &_right{
+          width: 100%;
+          height: 100%;
+          @extend %alinCenter;
+          justify-content: center;
+          & img{
+            height: 380px;
+            margin-top: 50px;
+          }
+      }
+      &_btn{
+        width: 80px;
+        height: 40px;
+        background-color: $lime;
+        cursor: pointer;
+        position: relative;
+        & a{
+            text-decoration: none;
+            color: $light;
+            font-weight: 700;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            position: absolute;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            @extend %alinCenter;
+            justify-content: center;
+        }
+        &:after{
+            position: absolute;
+            background-color: $orangeRed;
+            transition: all .6s ease;
+            width: 0px;
+            height: 100%;
+            content: '';
+            left: 0;
+            top: 0;
+        }
+        &:hover:after{
+            width: 100%;
+        }
+
+
+    }
+    }
+}
+/* end of hhero sectiion */
